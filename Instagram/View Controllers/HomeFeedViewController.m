@@ -8,6 +8,7 @@
 
 #import "HomeFeedViewController.h"
 #import "PostCell.h"
+#import "Parse/PFUser.h"
 
 @interface HomeFeedViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -41,6 +42,12 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (IBAction)logoutPressed:(id)sender {
+    [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
+        // PFUser.current() will now be nil
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }];
+}
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     PostCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"PostCell"];

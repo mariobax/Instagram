@@ -9,7 +9,7 @@
 #import "LoginViewController.h"
 #import "AppDelegate.h"
 #import "Parse/PFUser.h"
- #include <math.h>
+#include <math.h>
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
@@ -52,6 +52,9 @@
     [self.view addGestureRecognizer:tap];
     
     [self.passwordTextField setSecureTextEntry:YES];
+    self.passwordTextField.text = @"";
+    self.emailTextField.text = @"";
+    self.usernameTextField.text = @"";
     
     self.viewHeight = self.view.frame.size.height;
     self.multiplier = 570;
