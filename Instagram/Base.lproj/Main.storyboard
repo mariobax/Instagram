@@ -143,10 +143,10 @@
             </objects>
             <point key="canvasLocation" x="-397" y="1667"/>
         </scene>
-        <!--View Controller-->
+        <!--New Post View Controller-->
         <scene sceneID="V4r-0y-sK6">
             <objects>
-                <viewController id="wNc-uX-9sK" sceneMemberID="viewController">
+                <viewController id="wNc-uX-9sK" customClass="NewPostViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2DX-g8-hs5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -216,10 +216,10 @@
             </objects>
             <point key="canvasLocation" x="1051" y="950"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="scg-2W-9n7">
             <objects>
-                <viewController id="405-er-fSL" sceneMemberID="viewController">
+                <viewController id="405-er-fSL" customClass="ProfileViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qNJ-Tn-QH5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
