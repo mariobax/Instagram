@@ -51,6 +51,8 @@
     
     [self.view addGestureRecognizer:tap];
     
+    [self.passwordTextField setSecureTextEntry:YES];
+    
     self.viewHeight = self.view.frame.size.height;
     self.multiplier = 570;
     NSLog(@"%f", self.viewHeight);
