@@ -18,7 +18,7 @@
 @interface HomeFeedViewController () <UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *posts;
-
+@property (strong, nonatomic) UIRefreshControl *refreshControl;
 @end
 
 @implementation HomeFeedViewController
@@ -29,6 +29,11 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    
+    // Initialize an instance of UIRefreshControl
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(updateTable) forControlEvents:UIControlEventValueChanged];
+    [self.tableView insertSubview:self.refreshControl atIndex:0];
 
     // Set the title of the nav item to be the Instagram icon and put it in the middle
     UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"1200px-Instagram_logo.svg"]];
@@ -38,6 +43,10 @@
     [titleView addSubview:imageView];
     self.navigationItem.titleView = titleView;
     
+    [self updateTable];
+}
+
+- (void)updateTable {
     // Get the latest 20 posts
     // construct query
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
@@ -51,6 +60,7 @@
             // do something with the array of object returned by the call
             self.posts = [NSMutableArray arrayWithArray:posts];
             [self.tableView reloadData];
+            [self.refreshControl endRefreshing];
         } else {
             NSLog(@"%@", error.localizedDescription);
         }
@@ -66,6 +76,7 @@
     // Pass the selected object to the new view controller.
 }
 */
+
 - (IBAction)logoutPressed:(id)sender {
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
         // PFUser.current() will now be nil
