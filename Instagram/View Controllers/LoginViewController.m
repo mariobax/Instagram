@@ -36,6 +36,12 @@
     appDelegate.restrictRotation = restriction;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    self.passwordTextField.text = @"";
+    self.emailTextField.text = @"";
+    self.usernameTextField.text = @"";
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -52,9 +58,6 @@
     [self.view addGestureRecognizer:tap];
     
     [self.passwordTextField setSecureTextEntry:YES];
-    self.passwordTextField.text = @"";
-    self.emailTextField.text = @"";
-    self.usernameTextField.text = @"";
     
     self.viewHeight = self.view.frame.size.height;
     self.multiplier = 570;

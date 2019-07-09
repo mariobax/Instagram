@@ -13,7 +13,7 @@
         <!--Login View Controller-->
         <scene sceneID="RBa-Lw-hE5">
             <objects>
-                <viewController id="J4g-tr-TRv" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="J4g-tr-TRv" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="i9R-Tw-XG3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -128,7 +128,7 @@
         <!--Home Feed View Controller-->
         <scene sceneID="D3c-ZK-Zfk">
             <objects>
-                <viewController id="fOf-jm-MZl" customClass="HomeFeedViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeFeedViewController" id="fOf-jm-MZl" customClass="HomeFeedViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w20-qf-bMR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -233,7 +233,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="zay-1D-89N">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="EPP-eb-MU8" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="AuthenticatedViewController" automaticallyAdjustsScrollViewInsets="NO" id="EPP-eb-MU8" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7Nx-Vk-top">
                         <autoresizingMask key="autoresizingMask"/>

@@ -32,6 +32,13 @@
     
     [Parse initializeWithConfiguration:config];
     
+    // See whether there is a current user signed in...
+    if (PFUser.currentUser) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"AuthenticatedViewController"];
+    }
+    return YES;
+    
     // TEST
 //    PFObject *gameScore = [PFObject objectWithClassName:@"GameScore"];
 //    gameScore[@"score"] = @1337;
