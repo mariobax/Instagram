@@ -7,9 +7,12 @@
 //
 
 #import "PostViewController.h"
+#import "Post.h"
 
 @interface PostViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
-
+@property (weak, nonatomic) IBOutlet UITextView *captionTextView;
+@property (weak, nonatomic) IBOutlet UIButton *imageButton;
+@property (strong, nonatomic) UIImage *selectedImage;
 @end
 
 @implementation PostViewController
@@ -17,10 +20,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
+}
+
+-(void)dismissKeyboard {
+    [self.view endEditing:YES];
 }
 
 - (IBAction)cancelPressed:(id)sender {
-    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)addPictureWasPressed:(id)sender {
@@ -40,14 +49,22 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     
     // Get the image captured by the UIImagePickerController
-    UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
+    //UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
     
     // Do something with the images (based on your use case)
+    self.selectedImage = editedImage;
+    [self.imageButton setImage:self.selectedImage forState:UIControlStateNormal];
     
     // Dismiss UIImagePickerController to go back to your original view controller
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+- (IBAction)sharePressed:(id)sender {
+    [Post postUserImage:self.selectedImage withCaption:self.captionTextView.text withCompletion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 /*
 #pragma mark - Navigation

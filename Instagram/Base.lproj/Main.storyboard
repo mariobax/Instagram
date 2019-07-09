@@ -258,23 +258,30 @@
                                 <rect key="frame" x="20" y="7" width="92" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelPressed:" destination="x5G-G6-vgN" eventType="touchUpInside" id="jBM-Wj-UPX"/>
+                                </connections>
                             </button>
-                            <connections>
-                                <action selector="cancelPressed:" destination="x5G-G6-vgN" id="H5z-HK-Jri"/>
-                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="kK0-xq-FcF">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="WDA-Yc-5au" userLabel="Share">
                                 <rect key="frame" x="302" y="7" width="92" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Share"/>
+                                <connections>
+                                    <action selector="sharePressed:" destination="x5G-G6-vgN" eventType="touchUpInside" id="cmx-Aj-7f3"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="captionTextView" destination="xS3-Ld-Jng" id="cso-Dc-Ykt"/>
+                        <outlet property="imageButton" destination="Xz3-7z-kt3" id="mEP-Y1-biC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6BW-CD-9tX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="518.84057971014499" y="2415.4017857142858"/>
+            <point key="canvasLocation" x="-397" y="3192"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0EV-hf-Bed">
