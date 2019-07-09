@@ -19,7 +19,6 @@
 		C1C1889F22D3F59600A17272 /* InstagramUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C1889E22D3F59600A17272 /* InstagramUITests.m */; };
 		C1C188AF22D3FF5900A17272 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C188AE22D3FF5900A17272 /* LoginViewController.m */; };
 		C1C188B222D5049600A17272 /* HomeFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C188B122D5049600A17272 /* HomeFeedViewController.m */; };
-		C1C188B522D51DE400A17272 /* NewPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C188B422D51DE400A17272 /* NewPostViewController.m */; };
 		C1C188B822D51DF200A17272 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C188B722D51DF200A17272 /* ProfileViewController.m */; };
 		C1C188BC22D528DD00A17272 /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C188BB22D528DD00A17272 /* PostCell.m */; };
 /* End PBXBuildFile section */
@@ -66,8 +65,6 @@
 		C1C188AE22D3FF5900A17272 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		C1C188B022D5049600A17272 /* HomeFeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeFeedViewController.h; sourceTree = "<group>"; };
 		C1C188B122D5049600A17272 /* HomeFeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeFeedViewController.m; sourceTree = "<group>"; };
-		C1C188B322D51DE400A17272 /* NewPostViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewPostViewController.h; sourceTree = "<group>"; };
-		C1C188B422D51DE400A17272 /* NewPostViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewPostViewController.m; sourceTree = "<group>"; };
 		C1C188B622D51DF200A17272 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		C1C188B722D51DF200A17272 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		C1C188BA22D528DD00A17272 /* PostCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCell.h; sourceTree = "<group>"; };
@@ -191,8 +188,6 @@
 				C1C188AE22D3FF5900A17272 /* LoginViewController.m */,
 				C1C188B022D5049600A17272 /* HomeFeedViewController.h */,
 				C1C188B122D5049600A17272 /* HomeFeedViewController.m */,
-				C1C188B322D51DE400A17272 /* NewPostViewController.h */,
-				C1C188B422D51DE400A17272 /* NewPostViewController.m */,
 				C1C188B622D51DF200A17272 /* ProfileViewController.h */,
 				C1C188B722D51DF200A17272 /* ProfileViewController.m */,
 			);
@@ -429,7 +424,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1C1888A22D3F59600A17272 /* main.m in Sources */,
-				C1C188B522D51DE400A17272 /* NewPostViewController.m in Sources */,
 				C1C1887C22D3F59500A17272 /* AppDelegate.m in Sources */,
 				C1C188AF22D3FF5900A17272 /* LoginViewController.m in Sources */,
 				C1C188BC22D528DD00A17272 /* PostCell.m in Sources */,

@@ -186,6 +186,11 @@
                                 <action selector="logoutPressed:" destination="fOf-jm-MZl" id="uHS-fN-upe"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="insta_camera_btn" id="KCq-CI-N1C">
+                            <connections>
+                                <action selector="cameraPressed:" destination="fOf-jm-MZl" id="Rcy-dP-Yh6"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="j97-ga-eee" id="OvV-1j-RM8"/>
@@ -194,22 +199,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gub-SU-P04" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-397.10144927536237" y="1666.7410714285713"/>
-        </scene>
-        <!--New Post View Controller-->
-        <scene sceneID="V4r-0y-sK6">
-            <objects>
-                <viewController id="wNc-uX-9sK" customClass="NewPostViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="2DX-g8-hs5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Let-90-LVw"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="key-Rg-q7I"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="y52-Sv-dZr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1051" y="1667"/>
         </scene>
         <!--Item-->
         <scene sceneID="0EV-hf-Bed">
@@ -241,32 +230,12 @@
                     </tabBar>
                     <connections>
                         <segue destination="Ofy-fc-eqF" kind="relationship" relationship="viewControllers" id="GMN-3u-cgo"/>
-                        <segue destination="eWA-GT-I2O" kind="relationship" relationship="viewControllers" id="mJw-X6-gk1"/>
                         <segue destination="0CH-0g-Psk" kind="relationship" relationship="viewControllers" id="GfG-aA-vls"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ile-03-wU5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1051" y="-40"/>
-        </scene>
-        <!--Item-->
-        <scene sceneID="kik-jW-ihJ">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eWA-GT-I2O" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="insta_camera_btn" selectedImage="insta_camera_btn" id="u5w-sg-Gvk"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="s3l-DA-Rb7">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="wNc-uX-9sK" kind="relationship" relationship="rootViewController" id="gH0-5Z-b31"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="45h-lH-91W" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1051" y="950"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="scg-2W-9n7">

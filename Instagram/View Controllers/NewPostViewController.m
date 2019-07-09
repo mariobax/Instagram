@@ -8,7 +8,7 @@
 
 #import "NewPostViewController.h"
 
-@interface NewPostViewController ()
+@interface NewPostViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @end
 
@@ -18,13 +18,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    // Set the title of the nav item to be the Instagram icon and put it in the middle
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"1200px-Instagram_logo.svg"]];
-    imageView.contentMode = UIViewContentModeScaleAspectFit;
-    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 120, 44)];
-    imageView.frame = titleView.bounds;
-    [titleView addSubview:imageView];
-    self.navigationItem.titleView = titleView;
+    // Show either the camera or the photo library depending on camera permisions.
+    UIImagePickerController *imagePickerVC = [UIImagePickerController new];
+    imagePickerVC.delegate = self;
+    imagePickerVC.allowsEditing = YES;
+    // Check wether the camera is available. If not, open the photo library instead.
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
+    } else {
+        NSLog(@"Camera 🚫 available so we will use photo library instead");
+        imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    }
+    [self presentViewController:imagePickerVC animated:YES completion:nil];
 }
 
 /*
