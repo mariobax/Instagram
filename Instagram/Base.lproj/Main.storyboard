@@ -144,7 +144,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="523.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="a-nice-image-of-a-sunset_o_6847379" translatesAutoresizingMaskIntoConstraints="NO" id="QjY-Ze-Sj4">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QjY-Ze-Sj4">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="QjY-Ze-Sj4" secondAttribute="height" multiplier="1:1" id="bWQ-xa-2MD"/>
@@ -167,6 +167,10 @@
                                                 <constraint firstItem="gXv-7o-6nk" firstAttribute="leading" secondItem="f4Q-hk-QjH" secondAttribute="leading" id="tNw-pU-YpM"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="caption" destination="gXv-7o-6nk" id="q0P-WO-bGt"/>
+                                            <outlet property="image" destination="QjY-Ze-Sj4" id="NV9-cV-wrk"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -377,7 +381,6 @@
     </scenes>
     <resources>
         <image name="1200px-Instagram_logo.svg" width="1200" height="429"/>
-        <image name="a-nice-image-of-a-sunset_o_6847379" width="1600" height="1200"/>
         <image name="feed_tab" width="25" height="25"/>
         <image name="insta_camera_btn" width="25" height="25"/>
         <image name="noun_add_2519149" width="700" height="602"/>

@@ -8,12 +8,16 @@
 
 #import "HomeFeedViewController.h"
 #import "PostCell.h"
+#import "Post.h"
 #import "Parse/PFUser.h"
+#import "Parse/PFQuery.h"
 #import "AppDelegate.h"
 #import "LoginViewController.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface HomeFeedViewController () <UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSMutableArray *posts;
 
 @end
 
@@ -33,6 +37,24 @@
     imageView.frame = titleView.bounds;
     [titleView addSubview:imageView];
     self.navigationItem.titleView = titleView;
+    
+    // Get the latest 20 posts
+    // construct query
+    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+    [query orderByDescending:@"createdAt"];
+    [query includeKey:@"author"];
+    //[query whereKey:@"likesCount" greaterThan:@100];
+    query.limit = 20;
+    // fetch data asynchronously
+    [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
+        if (posts != nil) {
+            // do something with the array of object returned by the call
+            self.posts = [NSMutableArray arrayWithArray:posts];
+            [self.tableView reloadData];
+        } else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }];
 }
 
 /*
@@ -58,11 +80,15 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     PostCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"PostCell"];
+    Post *post = self.posts[indexPath.row];
+    NSURL *imageURL = [NSURL URLWithString:post.image.url];
+    [cell.image setImageWithURL:imageURL];
+    [cell.caption setText:post.caption];
     return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 100;
+    return self.posts.count;
 }
 
 @end

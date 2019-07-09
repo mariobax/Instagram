@@ -8,6 +8,7 @@ target 'Instagram' do
   # Pods for Instagram
   pod 'Parse'
   pod 'UITextView+Placeholder'
+  pod 'AFNetworking'
 
   target 'InstagramTests' do
     inherit! :search_paths

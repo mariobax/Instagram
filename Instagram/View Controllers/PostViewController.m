@@ -61,8 +61,9 @@
 }
 
 - (IBAction)sharePressed:(id)sender {
-    [Post postUserImage:self.selectedImage withCaption:self.captionTextView.text withCompletion:nil];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [Post postUserImage:self.selectedImage withCaption:self.captionTextView.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }];
 }
 
 
