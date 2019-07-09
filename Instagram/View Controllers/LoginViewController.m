@@ -122,14 +122,14 @@
             NSLog(@"Error: %@", error.localizedDescription);
         } else {
             NSLog(@"User registered successfully");
-
             // manually segue to logged in view
+            [self performSegueWithIdentifier:@"loginToHome" sender:self];
         }
     }];
 }
 
 - (void)loginUser {
-    NSString *username = self.usernameTextField.text;
+    NSString *username = self.emailTextField.text;
     NSString *password = self.passwordTextField.text;
     
     [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser * user, NSError *  error) {
@@ -137,8 +137,8 @@
             NSLog(@"User log in failed: %@", error.localizedDescription);
         } else {
             NSLog(@"User logged in successfully");
-            
             // display view controller that needs to shown after successful login
+            [self performSegueWithIdentifier:@"loginToHome" sender:self];
         }
     }];
 }
