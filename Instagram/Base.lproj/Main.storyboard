@@ -188,7 +188,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="insta_camera_btn" id="KCq-CI-N1C">
                             <connections>
-                                <action selector="cameraPressed:" destination="fOf-jm-MZl" id="Rcy-dP-Yh6"/>
+                                <segue destination="OLw-LC-d14" kind="presentation" id="Z3M-Mx-wpz"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -200,11 +200,87 @@
             </objects>
             <point key="canvasLocation" x="-397.10144927536237" y="1666.7410714285713"/>
         </scene>
-        <!--Item-->
+        <!--Post View Controller-->
+        <scene sceneID="8i0-mg-nmw">
+            <objects>
+                <viewController id="x5G-G6-vgN" customClass="PostViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="edf-Sv-O7d">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kz7-zJ-awc">
+                                <rect key="frame" x="0.0" y="88" width="414" height="200"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xz3-7z-kt3">
+                                        <rect key="frame" x="40" y="30" width="100" height="110"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="uyB-N8-C4P"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="noun_add_2519149"/>
+                                        <connections>
+                                            <action selector="addPictureWasPressed:" destination="x5G-G6-vgN" eventType="touchUpInside" id="9Zf-gV-8Lf"/>
+                                        </connections>
+                                    </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xS3-Ld-Jng">
+                                        <rect key="frame" x="180" y="30" width="204" height="140"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Add a caption"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="xS3-Ld-Jng" firstAttribute="leading" secondItem="Xz3-7z-kt3" secondAttribute="trailing" constant="40" id="14g-xs-M0L"/>
+                                    <constraint firstAttribute="bottom" secondItem="Xz3-7z-kt3" secondAttribute="bottom" constant="60" id="4oE-GP-GUY"/>
+                                    <constraint firstItem="Xz3-7z-kt3" firstAttribute="top" secondItem="kz7-zJ-awc" secondAttribute="top" constant="30" id="5W6-UA-XU6"/>
+                                    <constraint firstAttribute="bottom" secondItem="xS3-Ld-Jng" secondAttribute="bottom" constant="30" id="BYq-NS-1aW"/>
+                                    <constraint firstItem="xS3-Ld-Jng" firstAttribute="top" secondItem="kz7-zJ-awc" secondAttribute="top" constant="30" id="FaI-jF-Bg3"/>
+                                    <constraint firstItem="Xz3-7z-kt3" firstAttribute="leading" secondItem="kz7-zJ-awc" secondAttribute="leading" constant="40" id="UeN-0Y-aQc"/>
+                                    <constraint firstAttribute="height" constant="200" id="YK1-ct-8TP"/>
+                                    <constraint firstAttribute="trailing" secondItem="xS3-Ld-Jng" secondAttribute="trailing" constant="30" id="mlB-aN-feg"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cNX-iE-Qz2" firstAttribute="trailing" secondItem="kz7-zJ-awc" secondAttribute="trailing" id="U4h-e3-kqr"/>
+                            <constraint firstItem="kz7-zJ-awc" firstAttribute="top" secondItem="cNX-iE-Qz2" secondAttribute="top" id="ZCL-lJ-L83"/>
+                            <constraint firstItem="kz7-zJ-awc" firstAttribute="leading" secondItem="cNX-iE-Qz2" secondAttribute="leading" id="x6q-hQ-20m"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cNX-iE-Qz2"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="CuF-VO-S2m">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="hZW-DJ-UDV">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dJw-td-T8Y">
+                                <rect key="frame" x="20" y="7" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cancel"/>
+                            </button>
+                            <connections>
+                                <action selector="cancelPressed:" destination="x5G-G6-vgN" id="H5z-HK-Jri"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="kK0-xq-FcF">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="WDA-Yc-5au" userLabel="Share">
+                                <rect key="frame" x="302" y="7" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Share"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6BW-CD-9tX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="518.84057971014499" y="2415.4017857142858"/>
+        </scene>
+        <!--Navigation Controller-->
         <scene sceneID="0EV-hf-Bed">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ofy-fc-eqF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="feed_tab" selectedImage="feed_tab" id="TcX-Bo-dEV"/>
+                    <tabBarItem key="tabBarItem" title="" image="feed_tab" selectedImage="feed_tab" id="TcX-Bo-dEV"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Gmi-uP-29G">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -225,6 +301,7 @@
                 <tabBarController storyboardIdentifier="AuthenticatedViewController" automaticallyAdjustsScrollViewInsets="NO" id="EPP-eb-MU8" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7Nx-Vk-top">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -253,11 +330,11 @@
             </objects>
             <point key="canvasLocation" x="2406" y="1667"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="nQz-gu-i16">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0CH-0g-Psk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="profile_tab" selectedImage="profile_tab" id="sXU-lO-jkf"/>
+                    <tabBarItem key="tabBarItem" title="" image="profile_tab" selectedImage="profile_tab" id="sXU-lO-jkf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="A4c-Va-zoe">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -272,12 +349,31 @@
             </objects>
             <point key="canvasLocation" x="2406" y="950"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="o0S-rm-pcd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OLw-LC-d14" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8xz-GJ-cO0">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="x5G-G6-vgN" kind="relationship" relationship="rootViewController" id="zL5-yj-w4Q"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H0D-ob-b7i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-389.85507246376812" y="2415.4017857142858"/>
+        </scene>
     </scenes>
     <resources>
         <image name="1200px-Instagram_logo.svg" width="1200" height="429"/>
         <image name="a-nice-image-of-a-sunset_o_6847379" width="1600" height="1200"/>
         <image name="feed_tab" width="25" height="25"/>
         <image name="insta_camera_btn" width="25" height="25"/>
+        <image name="noun_add_2519149" width="700" height="602"/>
         <image name="profile_tab" width="25" height="25"/>
     </resources>
 </document>
