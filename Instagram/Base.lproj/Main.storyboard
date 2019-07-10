@@ -370,6 +370,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZBQ-aa-NoO">
                                 <rect key="frame" x="15" y="103" width="100" height="100"/>
+                                <color key="backgroundColor" red="0.61045539380000002" green="0.17268377539999999" blue="0.3411842585" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="QYr-sd-hfs"/>
                                     <constraint firstAttribute="height" constant="100" id="acS-nn-Yv1"/>

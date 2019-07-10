@@ -44,6 +44,8 @@
     
     self.navigationItem.title = [NSString stringWithFormat:@"@%@", [PFUser currentUser].username];
     
+    self.profilePicture.layer.cornerRadius = self.profilePicture.frame.size.width/2;
+    
 }
 
 - (void)updateTable {
