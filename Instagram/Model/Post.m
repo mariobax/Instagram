@@ -13,6 +13,7 @@
 @dynamic postID;
 @dynamic userID;
 @dynamic author;
+@dynamic username;
 @dynamic caption;
 @dynamic image;
 @dynamic likeCount;
@@ -28,6 +29,7 @@
     Post *newPost = [Post new];
     newPost.image = [self getPFFileFromImage:image];
     newPost.author = [PFUser currentUser];
+    newPost.username = [PFUser currentUser].username;
     newPost.caption = caption;
     newPost.likeCount = @(0);
     newPost.commentCount = @(0);

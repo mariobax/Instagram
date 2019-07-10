@@ -54,6 +54,8 @@
     [query orderByDescending:@"createdAt"];
     [query includeKey:@"author"];
     [query includeKey:@"createdAt"];
+    [query includeKey:@"username"];
+    
     //[query whereKey:@"likesCount" greaterThan:@100];
     query.limit = 20;
     // fetch data asynchronously
@@ -61,6 +63,7 @@
         if (posts != nil) {
             // do something with the array of objects returned by the call
             self.posts = [NSMutableArray arrayWithArray:posts];
+            NSLog(@"%@", self.posts);
             [self.tableView reloadData];
             [self.refreshControl endRefreshing];
         } else {
@@ -100,6 +103,7 @@
     NSURL *imageURL = [NSURL URLWithString:post.image.url];
     [cell.image setImageWithURL:imageURL];
     [cell.caption setText:post.caption];
+    [cell.usernameButton setTitle:post.username forState:UIControlStateNormal];
     return cell;
 }
 
