@@ -17,6 +17,7 @@
 @dynamic image;
 @dynamic likeCount;
 @dynamic commentCount;
+@dynamic dateString;
 
 + (nonnull NSString *)parseClassName {
     return @"Post";
@@ -30,6 +31,12 @@
     newPost.caption = caption;
     newPost.likeCount = @(0);
     newPost.commentCount = @(0);
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    NSDate *date= [NSDate date];
+    newPost.dateString = [dateFormatter stringFromDate:date];
+    NSLog(@"%@", newPost.dateString);
+    //newPost.dateString = [NSString stringWithFormat:@"%@", [dateFormatter dateFromString:dateString]];
     [newPost saveInBackgroundWithBlock: completion];
 }
 

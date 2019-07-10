@@ -14,6 +14,7 @@
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 #import "UIImageView+AFNetworking.h"
+#import "DetailViewController.h"
 
 @interface HomeFeedViewController () <UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -52,12 +53,13 @@
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     [query orderByDescending:@"createdAt"];
     [query includeKey:@"author"];
+    [query includeKey:@"createdAt"];
     //[query whereKey:@"likesCount" greaterThan:@100];
     query.limit = 20;
     // fetch data asynchronously
     [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
         if (posts != nil) {
-            // do something with the array of object returned by the call
+            // do something with the array of objects returned by the call
             self.posts = [NSMutableArray arrayWithArray:posts];
             [self.tableView reloadData];
             [self.refreshControl endRefreshing];
@@ -67,15 +69,18 @@
     }];
 }
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"viewPost"]) {
+        DetailViewController *vc = [segue destinationViewController];
+        Post *post = (Post *)sender;
+        vc.text = post.dateString;
+    }
 }
-*/
 
 - (IBAction)logoutPressed:(id)sender {
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
@@ -96,6 +101,10 @@
     [cell.image setImageWithURL:imageURL];
     [cell.caption setText:post.caption];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"viewPost" sender:self.posts[indexPath.row]];
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
