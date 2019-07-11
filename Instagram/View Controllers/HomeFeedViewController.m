@@ -16,6 +16,7 @@
 #import "UIImageView+AFNetworking.h"
 #import "DetailViewController.h"
 #import "InfiniteScrollActivityView.h"
+#import "MBProgressHUD.h"
 
 
 @interface HomeFeedViewController () <UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIScrollViewDelegate>
@@ -66,6 +67,9 @@
 }
 
 - (void)updateTable {
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
     // Get the latest 20 posts
     // construct query
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
@@ -82,6 +86,7 @@
             // do something with the array of objects returned by the call
             self.posts = [NSMutableArray arrayWithArray:posts];
             [self.tableView reloadData];
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
             [self.refreshControl endRefreshing];
         } else {
             NSLog(@"%@", error.localizedDescription);

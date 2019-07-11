@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "Parse/PFUser.h"
 #include <math.h>
+#import "MBProgressHUD.h"
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
@@ -131,6 +132,7 @@
             // manually segue to logged in view
             [self performSegueWithIdentifier:@"loginToHome" sender:self];
         }
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
     }];
 }
 
@@ -146,11 +148,13 @@
             // display view controller that needs to shown after successful login
             [self performSegueWithIdentifier:@"loginToHome" sender:self];
         }
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
     }];
 }
 
 - (IBAction)loginPressed:(id)sender {
     // If log in
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     if (self.usernameTextField.alpha == 0) {
         NSLog(@"Logging in...");
         [self loginUser];
