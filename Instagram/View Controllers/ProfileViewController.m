@@ -48,6 +48,18 @@
     
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    
+    PFFileObject *imageFile = [PFUser currentUser][@"profilePic"];
+    
+    [imageFile getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
+        if (!error) {
+            UIImage *image = [UIImage imageWithData:data];
+            [self.profilePicture setImage:image];
+        }
+    }];
+}
+
 - (void)updateTable {
     // Get the latest 18 posts
     // construct query

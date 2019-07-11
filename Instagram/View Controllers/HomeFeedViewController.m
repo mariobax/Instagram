@@ -129,7 +129,7 @@
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.posts.count;
+    return self.posts.count; 
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {

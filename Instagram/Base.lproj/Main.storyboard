@@ -568,7 +568,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eHl-dj-DfJ"/>
                     </view>
-                    <navigationItem key="navigationItem" title="@_username_" id="38C-qo-9JM"/>
+                    <navigationItem key="navigationItem" title="@_username_" id="38C-qo-9JM">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="zaM-9f-5Sh">
+                            <connections>
+                                <segue destination="f51-yq-62D" kind="show" id="y4f-8v-90c"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="bioLabel" destination="DMs-DU-JSI" id="8OI-qc-kAk"/>
                         <outlet property="collectionView" destination="Vvc-dC-HE8" id="BUM-qd-XS1"/>
@@ -582,6 +588,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WkV-wK-SHf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2405.7971014492755" y="1666.7410714285713"/>
+        </scene>
+        <!--Edit Profile Controller-->
+        <scene sceneID="mNZ-0Y-pkN">
+            <objects>
+                <viewController id="f51-yq-62D" customClass="EditProfileController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OMW-J2-Uje">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wab-Ea-7Me">
+                                <rect key="frame" x="130" y="138" width="154" height="30"/>
+                                <state key="normal" title="Change Profile Picture"/>
+                                <connections>
+                                    <action selector="selectProfilePicturePressed:" destination="f51-yq-62D" eventType="touchUpInside" id="ORh-26-6B1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wab-Ea-7Me" firstAttribute="top" secondItem="1Zu-LW-H9Y" secondAttribute="top" constant="50" id="mSk-k9-Etg"/>
+                            <constraint firstItem="wab-Ea-7Me" firstAttribute="centerX" secondItem="OMW-J2-Uje" secondAttribute="centerX" id="pB1-Wh-i11"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1Zu-LW-H9Y"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2ZG-Ez-6JW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2406" y="2415"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nQz-gu-i16">
