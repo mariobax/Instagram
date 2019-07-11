@@ -18,18 +18,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-60" translatesAutoresizingMaskIntoConstraints="NO" id="XJE-ED-fNt">
-                                <rect key="frame" x="157" y="398" width="100" height="100"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cropped-IG_Glyph_Fill" translatesAutoresizingMaskIntoConstraints="NO" id="Vhd-pD-i7A">
+                                <rect key="frame" x="199" y="363" width="16" height="170"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="bjN-n8-CeL"/>
-                                    <constraint firstAttribute="width" constant="100" id="jnY-ND-PHH"/>
+                                    <constraint firstAttribute="height" constant="170" id="c3S-wJ-Je2"/>
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="XJE-ED-fNt" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="NS6-he-Na8"/>
-                            <constraint firstItem="XJE-ED-fNt" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="zUd-fK-6SP"/>
+                            <constraint firstItem="Vhd-pD-i7A" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="RGb-oa-3G8"/>
+                            <constraint firstItem="Vhd-pD-i7A" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="hvl-0K-DO1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -40,6 +39,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Icon-60" width="60" height="60"/>
+        <image name="cropped-IG_Glyph_Fill" width="512" height="512"/>
     </resources>
 </document>
