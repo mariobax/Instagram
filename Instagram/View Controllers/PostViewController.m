@@ -8,6 +8,7 @@
 
 #import "PostViewController.h"
 #import "Post.h"
+#import "MBProgressHUD.h"
 
 @interface PostViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *captionTextView;
@@ -61,7 +62,9 @@
 }
 
 - (IBAction)sharePressed:(id)sender {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [Post postUserImage:self.selectedImage withCaption:self.captionTextView.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
         [self dismissViewControllerAnimated:YES completion:nil];
     }];
 }
