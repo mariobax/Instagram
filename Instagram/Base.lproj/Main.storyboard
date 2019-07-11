@@ -169,6 +169,9 @@
                                                     <state key="normal" title="userName">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <segue destination="405-er-fSL" kind="show" id="ypv-IT-SZb"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="0 people like this post" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lns-w0-GlD">
                                                     <rect key="frame" x="10" y="484" width="168" height="21"/>
@@ -666,4 +669,7 @@
         <image name="noun_send_2493772" width="545" height="531"/>
         <image name="profile_tab" width="25" height="25"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ypv-IT-SZb"/>
+    </inferredMetricsTieBreakers>
 </document>
