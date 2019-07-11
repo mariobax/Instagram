@@ -98,7 +98,10 @@
     if ([segue.identifier isEqualToString:@"viewPost"]) {
         DetailViewController *vc = [segue destinationViewController];
         Post *post = (Post *)sender;
-        vc.text = post.dateString;
+        NSString *dateString = [NSDateFormatter localizedStringFromDate:post.createdAt dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterFullStyle];
+        NSLog(@"%@", dateString);
+        vc.text = [NSString stringWithFormat:@"%@", dateString];
+        //vc.text = post.dateString;
     }
 }
 
@@ -121,6 +124,14 @@
     [cell.image setImageWithURL:imageURL];
     [cell.caption setText:post.caption];
     [cell.usernameButton setTitle:post.username forState:UIControlStateNormal];
+    PFFileObject *imageFile = [PFUser currentUser][@"profilePic"];
+    
+    [imageFile getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
+        if (!error) {
+            UIImage *image = [UIImage imageWithData:data];
+            [cell.profilePicture setImage:image];
+        }
+    }];
     return cell;
 }
 
