@@ -36,7 +36,7 @@
     layout.minimumInteritemSpacing = 3;
     layout.minimumLineSpacing = 3;
     CGFloat imagesPerLine = 3;
-    CGFloat itemWidth = (self.collectionView.frame.size.width - layout.minimumInteritemSpacing*(imagesPerLine - 1)) / imagesPerLine;
+    CGFloat itemWidth = (self.view.frame.size.width - layout.minimumInteritemSpacing*(imagesPerLine - 1)) / imagesPerLine;
     layout.itemSize = CGSizeMake(itemWidth, itemWidth);
     [self.collectionView setCollectionViewLayout:layout animated:NO];
     
