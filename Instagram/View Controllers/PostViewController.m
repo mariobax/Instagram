@@ -9,8 +9,9 @@
 #import "PostViewController.h"
 #import "Post.h"
 #import "MBProgressHUD.h"
+#import "PhotoViewController.h"
 
-@interface PostViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface PostViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, PhotoViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *captionTextView;
 @property (weak, nonatomic) IBOutlet UIButton *imageButton;
 @property (strong, nonatomic) UIImage *selectedImage;
@@ -34,17 +35,17 @@
 }
 
 - (IBAction)addPictureWasPressed:(id)sender {
-    UIImagePickerController *imagePickerVC = [UIImagePickerController new];
-    imagePickerVC.delegate = self;
-    imagePickerVC.allowsEditing = YES;
-    // Check wether the camera is available. If not, open the photo library instead.
-    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-        imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
-    } else {
-        NSLog(@"Camera 🚫 available so we will use photo library instead");
-        imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    }
-    [self presentViewController:imagePickerVC animated:YES completion:nil];
+//    UIImagePickerController *imagePickerVC = [UIImagePickerController new];
+//    imagePickerVC.delegate = self;
+//    imagePickerVC.allowsEditing = YES;
+//    // Check wether the camera is available. If not, open the photo library instead.
+//    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+//        imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
+//    } else {
+//        NSLog(@"Camera 🚫 available so we will use photo library instead");
+//        imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+//    }
+//    [self presentViewController:imagePickerVC animated:YES completion:nil];
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
@@ -70,14 +71,24 @@
 }
 
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    //if ([segue.identifier isEqualToString:@"segueIdentifier"])  {
+    UINavigationController *navigationController = [segue destinationViewController];
+    PhotoViewController *composeController = (PhotoViewController *) navigationController.topViewController;
+    composeController.delegate = self; // protocol listener
+    //}
 }
-*/
+
+- (void)sendImageBack:(UIImage *)image {
+    self.selectedImage = image;
+    [self.imageButton setImage:image forState:UIControlStateNormal];
+}
+
 
 @end
